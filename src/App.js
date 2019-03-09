@@ -1,28 +1,52 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import { Link, Switch, Route } from 'react-router-dom';
+import PlayerDashboard from './components/PlayerDashboard';
+import EditPlayer from './components/EditPlayer';
+import { fetchPlayers } from './state/actions';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { compose } from 'redux';
+import { getIsLoading } from './state/selectors';
+import Spinner from './components/Spinner';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <nav>
+          <div className="nav-wrapper">
+            <Link to='/' className="brand-logo">PGA React Test</Link>
+          </div>
+        </nav>
+        <div className="container">
+        {!this.props.loading && (
+          <Switch>
+            <Route exact path='/edit' component={ EditPlayer } />
+            <Route exact path='/edit/:id' component={ EditPlayer } />
+            <Route exact path='/' component={ PlayerDashboard } />
+          </Switch>
+        )}
+        {this.props.loading && (
+          <Spinner></Spinner>
+        )}
+        </div>
+        
+      </React.Fragment>
     );
+  }
+
+  componentWillMount() {
+    this.props.fetchPlayers();
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    loading: getIsLoading(state)
+  }
+}
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps, {fetchPlayers})
+)(App);

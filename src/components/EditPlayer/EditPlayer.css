@@ -1,0 +1,15 @@
+.EditPlayer {
+    margin-top:10px;
+}
+
+.EditPlayer input {
+    max-width: 300px;
+}
+
+.EditPlayer input[type="number"] {
+    max-width: 60px;
+}
+
+.EditPlayer .cancel-btn {
+    margin-right: 20px;
+}
