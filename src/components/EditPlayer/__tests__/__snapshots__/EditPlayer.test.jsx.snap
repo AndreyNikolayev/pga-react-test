@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditPlayer renders correctly 1`] = `
+<div
+  className="edit-player"
+>
+  <h3>
+    Add Player
+  </h3>
+  <div
+    className="row"
+  >
+    <form
+      className="s12 m6"
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="input-field col s12"
+        >
+          <label
+            className=""
+            htmlFor="firstName"
+          >
+            First Name:  
+          </label>
+          <input
+            className="form-control "
+            id="firstName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <span
+            className="helper-text"
+            data-error="Field is required"
+          />
+        </div>
+        <div
+          className="input-field col s12"
+        >
+          <label
+            className=""
+            htmlFor="lastName"
+          >
+            Last Name: 
+          </label>
+          <input
+            className="form-control "
+            id="lastName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <span
+            className="helper-text"
+            data-error="Field is required"
+          />
+        </div>
+        <div
+          className="input-field col s12"
+        >
+          <label
+            className=""
+            htmlFor="score"
+          >
+            Score: 
+          </label>
+          <input
+            className="form-control "
+            id="score"
+            max="100"
+            min="0"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="number"
+            value=""
+          />
+          <span
+            className="helper-text"
+            data-error="Field is required"
+          />
+        </div>
+        <div
+          className="col s12"
+        >
+          <Link
+            className="cancel-btn waves-effect waves-light btn"
+            replace={false}
+            to="/"
+          >
+            Back
+          </Link>
+          <button
+            className="waves-effect waves-light btn"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

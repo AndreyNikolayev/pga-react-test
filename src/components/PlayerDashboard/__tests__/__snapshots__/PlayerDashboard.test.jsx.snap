@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerDashboard renders correctly 1`] = `
+<div
+  className="player-dashboard"
+>
+  <h3
+    className="left"
+  >
+    Leaderboard
+  </h3>
+  <Link
+    className="waves-effect waves-light btn right"
+    replace={false}
+    style={
+      Object {
+        "marginTop": 40,
+      }
+    }
+    to="/edit"
+  >
+    Add Player
+  </Link>
+  <table
+    className="table striped"
+    style={
+      Object {
+        "marginTop": 20,
+      }
+    }
+  >
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Score
+        </th>
+        <th />
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;

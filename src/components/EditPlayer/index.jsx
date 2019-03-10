@@ -9,6 +9,7 @@ export default class EditPlayer extends Component {
 
     this.onChangeInput = this.onChangeInput.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+    console.log(this.props);
 
     this.state = {
       playerId: this.props.match.params.id,
