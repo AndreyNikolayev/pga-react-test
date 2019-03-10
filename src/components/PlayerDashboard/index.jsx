@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link} from 'react-router-dom';
-import './PlayerDashboard.css';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 export default class PlayerDashboard extends Component {
 
@@ -36,7 +36,7 @@ export default class PlayerDashboard extends Component {
 
   render() {
     return (
-      <div className="PlayerDashboard">
+      <div className="player-dashboard">
         <h3 className="left">Leaderboard</h3>
         <Link to="/edit" className="waves-effect waves-light btn right" style={{ marginTop: 40 }}>Add Player</Link>
         <table className="table striped" style={{ marginTop: 20 }}>
@@ -48,7 +48,7 @@ export default class PlayerDashboard extends Component {
             </tr>
           </thead>
           <tbody>
-            { this.renderRows() }
+            {this.renderRows()}
           </tbody>
         </table>
       </div>

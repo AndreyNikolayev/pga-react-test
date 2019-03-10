@@ -1,9 +1,9 @@
-.PlayerDashboard .delete-btn {
+.player-dashboard .delete-btn {
     cursor: pointer;
     color: #d32f2f;
 }
 
-.PlayerDashboard .player-row:hover {
+.player-dashboard .player-row:hover {
     cursor: pointer;
     background-color: #eee;
 }

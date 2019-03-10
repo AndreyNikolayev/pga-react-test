@@ -1,11 +1,13 @@
-import {FETCH_PLAYERS} from '../actions/types';
+import {
+  FETCH_PLAYERS
+} from '../actions/types';
 
 const initialState = {
   players: undefined,
 };
 
 export default (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case FETCH_PLAYERS:
       return {
         ...state,

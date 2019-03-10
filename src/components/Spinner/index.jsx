@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './Spinner.css';
+import './styles.css';
 
 export default class Spinner extends Component {
   render() {
     return (
-      <div className="Spinner">
+      <div className="spinner">
         <div className="preloader-wrapper big active">
           <div className="spinner-layer spinner-blue">
             <div className="circle-clipper left">

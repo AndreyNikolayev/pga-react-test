@@ -1,0 +1,15 @@
+.edit-player {
+    margin-top:10px;
+}
+
+.edit-player input {
+    max-width: 300px;
+}
+
+.edit-player input[type="number"] {
+    max-width: 60px;
+}
+
+.edit-player .cancel-btn {
+    margin-right: 20px;
+}
