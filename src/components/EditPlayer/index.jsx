@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import PropTypes from 'prop-types';
 
 export default class EditPlayer extends Component {
   constructor(props) {
@@ -167,4 +168,9 @@ export default class EditPlayer extends Component {
       </div>
     )
   }
+}
+
+EditPlayer.propTypes = {
+  player: PropTypes.object,
+  save: PropTypes.func.isRequired
 }

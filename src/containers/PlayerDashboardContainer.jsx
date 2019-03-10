@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 import { deletePlayer } from '../state/actions';
 import { getPlayers } from '../state/selectors';
 import PlayerDashboard from '../components/PlayerDashboard';
+import PropTypes from 'prop-types';
 
 class PlayerDashboardContainer extends Component {
   constructor(props) {
@@ -19,6 +20,11 @@ class PlayerDashboardContainer extends Component {
   render() {
     return <PlayerDashboard {...this.props} selectPlayer={this.goToDetails} />
   }
+}
+
+PlayerDashboardContainer.propTypes = {
+  players: PropTypes.arrayOf(PropTypes.object),
+  deletePlayer: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import PropTypes from 'prop-types';
 
 export default class PlayerDashboard extends Component {
 
@@ -54,4 +55,10 @@ export default class PlayerDashboard extends Component {
       </div>
     );
   }
+}
+
+PlayerDashboard.propTypes = {
+  players: PropTypes.arrayOf(PropTypes.object),
+  deletePlayer: PropTypes.func.isRequired,
+  selectPlayer: PropTypes.func.isRequired
 }

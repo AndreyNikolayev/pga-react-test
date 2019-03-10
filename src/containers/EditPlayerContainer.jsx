@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 import { addUpdatePlayer } from '../state/actions';
 import { getCurrentPlayer } from '../state/selectors';
 import EditPlayer from '../components/EditPlayer';
+import PropTypes from 'prop-types';
 
 class EditPlayerContainer extends Component {
   constructor(props) {
@@ -36,6 +37,11 @@ class EditPlayerContainer extends Component {
   render() {
     return <EditPlayer {...this.props} handleSave={this.save} />
   }
+}
+
+EditPlayerContainer.propTypes = {
+  player: PropTypes.object,
+  addUpdatePlayer: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state, props) => {
