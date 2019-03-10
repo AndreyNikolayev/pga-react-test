@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { addUpdatePlayer } from '../../state/actions';
-import { connect } from 'react-redux';
-import { getCurrentPlayer } from '../../state/selectors';
 import { Link } from 'react-router-dom';
-import { compose } from 'redux';
-import { withRouter } from 'react-router';
 import './EditPlayer.css';
 
-class EditPlayer extends Component {
+export default class EditPlayer extends Component {
   constructor(props) {
     super(props)
 
@@ -22,9 +17,20 @@ class EditPlayer extends Component {
     }
   }
 
+  componentWillUpdate(nextProps, prevState) {
+    if (nextProps.match.params.id === prevState.playerId) {
+      return;
+    }
+    this.setState({
+      playerId: this.props.match.params.id,
+      firstName: this.composeInput('firstName'),
+      lastName: this.composeInput('lastName'),
+      score: this.composeInput('score')
+    })
+  }
+
   composeInput(inputName) {
     const inputValue = this.props.player? this.props.player[inputName] : ''
-
     return {
       value: inputValue,
       isTouched: false,
@@ -94,11 +100,7 @@ class EditPlayer extends Component {
       score: this.state.score.value
     }
 
-    const { addUpdatePlayer } = this.props
-
-    await addUpdatePlayer(this.state.playerId, player)
-
-    this.props.history.push('')
+    this.props.handleSave(this.state.playerId, player)
   }
 
   get pageTitle() {
@@ -166,14 +168,3 @@ class EditPlayer extends Component {
     )
   }
 }
-
-const mapStateToProps = (state, props) => {
-  return {
-    player: getCurrentPlayer(props.match.params.id)(state)
-  }
-}
-
-export default compose(
-  withRouter,
-  connect(mapStateToProps, {addUpdatePlayer})
-)(EditPlayer)

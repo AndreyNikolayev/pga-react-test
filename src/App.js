@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
-import PlayerDashboard from './components/PlayerDashboard';
-import EditPlayer from './components/EditPlayer';
+import PlayerDashboardContainer from './containers/PlayerDashboardContainer';
+import EditPlayerContainer from './containers/EditPlayerContainer';
 import { fetchPlayers } from './state/actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -21,9 +21,9 @@ class App extends Component {
         <div className="container">
         {!this.props.loading && (
           <Switch>
-            <Route exact path='/edit' component={ EditPlayer } />
-            <Route exact path='/edit/:id' component={ EditPlayer } />
-            <Route exact path='/' component={ PlayerDashboard } />
+            <Route exact path='/edit' component={ EditPlayerContainer } />
+            <Route exact path='/edit/:id' component={ EditPlayerContainer } />
+            <Route exact path='/' component={ PlayerDashboardContainer } />
           </Switch>
         )}
         {this.props.loading && (
