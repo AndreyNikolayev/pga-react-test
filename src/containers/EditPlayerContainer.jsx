@@ -46,7 +46,8 @@ EditPlayerContainer.propTypes = {
 
 const mapStateToProps = (state, props) => {
   return {
-    player: getCurrentPlayer(props.match.params.id)(state)
+    player: getCurrentPlayer(props.match.params.id)(state),
+    playerId: props.match.params.id
   }
 }
 

@@ -9,30 +9,31 @@ export default class EditPlayer extends Component {
 
     this.onChangeInput = this.onChangeInput.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
-    console.log(this.props);
+    this.componentWillUpdate = this.componentWillUpdate.bind(this)
 
     this.state = {
-      playerId: this.props.match.params.id,
-      firstName: this.composeInput('firstName'),
-      lastName: this.composeInput('lastName'),
-      score: this.composeInput('score')
+      playerId: this.props.playerId,
+      firstName: this.composeInput('firstName', this.props),
+      lastName: this.composeInput('lastName', this.props),
+      score: this.composeInput('score', this.props)
     }
   }
 
   componentWillUpdate(nextProps, prevState) {
-    if (nextProps.match.params.id === prevState.playerId) {
+    if (nextProps.playerId === prevState.playerId) {
       return;
     }
+
     this.setState({
-      playerId: this.props.match.params.id,
-      firstName: this.composeInput('firstName'),
-      lastName: this.composeInput('lastName'),
-      score: this.composeInput('score')
+      playerId: nextProps.playerId,
+      firstName: this.composeInput('firstName', nextProps),
+      lastName: this.composeInput('lastName', nextProps),
+      score: this.composeInput('score', nextProps)
     })
   }
 
-  composeInput(inputName) {
-    const inputValue = this.props.player ? this.props.player[inputName] : ''
+  composeInput(inputName, props) {
+    const inputValue = props.player ? props.player[inputName] : ''
     return {
       value: inputValue,
       isTouched: false,
@@ -173,5 +174,5 @@ export default class EditPlayer extends Component {
 
 EditPlayer.propTypes = {
   player: PropTypes.object,
-  save: PropTypes.func.isRequired
+  handleSave: PropTypes.func.isRequired
 }

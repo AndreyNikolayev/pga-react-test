@@ -40,7 +40,48 @@ exports[`PlayerDashboard renders correctly 1`] = `
         <th />
       </tr>
     </thead>
-    <tbody />
+    <tbody>
+      <tr
+        className="player-row"
+        key="1"
+        onClick={[Function]}
+      >
+        <td>
+          Last 1, First 1
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          <i
+            className="material-icons delete-btn"
+            onClick={[Function]}
+          >
+            delete
+          </i>
+        </td>
+      </tr>
+      <tr
+        className="player-row"
+        key="2"
+        onClick={[Function]}
+      >
+        <td>
+          Last 2, First 2
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          <i
+            className="material-icons delete-btn"
+            onClick={[Function]}
+          >
+            delete
+          </i>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
 `;

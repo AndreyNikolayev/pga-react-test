@@ -58,7 +58,7 @@ export default class PlayerDashboard extends Component {
 }
 
 PlayerDashboard.propTypes = {
-  players: PropTypes.arrayOf(PropTypes.object),
+  players: PropTypes.object,
   deletePlayer: PropTypes.func.isRequired,
   selectPlayer: PropTypes.func.isRequired
 }

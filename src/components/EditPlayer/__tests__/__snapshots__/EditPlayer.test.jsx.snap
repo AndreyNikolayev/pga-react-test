@@ -5,7 +5,7 @@ exports[`EditPlayer renders correctly 1`] = `
   className="edit-player"
 >
   <h3>
-    Add Player
+    Edit Player
   </h3>
   <div
     className="row"
@@ -22,7 +22,7 @@ exports[`EditPlayer renders correctly 1`] = `
           className="input-field col s12"
         >
           <label
-            className=""
+            className="active"
             htmlFor="firstName"
           >
             First Name:  
@@ -33,18 +33,18 @@ exports[`EditPlayer renders correctly 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             type="text"
-            value=""
+            value="First 1"
           />
           <span
             className="helper-text"
-            data-error="Field is required"
+            data-error=""
           />
         </div>
         <div
           className="input-field col s12"
         >
           <label
-            className=""
+            className="active"
             htmlFor="lastName"
           >
             Last Name: 
@@ -55,18 +55,18 @@ exports[`EditPlayer renders correctly 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             type="text"
-            value=""
+            value="Last 1"
           />
           <span
             className="helper-text"
-            data-error="Field is required"
+            data-error=""
           />
         </div>
         <div
           className="input-field col s12"
         >
           <label
-            className=""
+            className="active"
             htmlFor="score"
           >
             Score: 
@@ -79,11 +79,11 @@ exports[`EditPlayer renders correctly 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             type="number"
-            value=""
+            value="1"
           />
           <span
             className="helper-text"
-            data-error="Field is required"
+            data-error=""
           />
         </div>
         <div
