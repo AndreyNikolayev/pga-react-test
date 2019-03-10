@@ -98,7 +98,7 @@ export default class EditPlayer extends Component {
     const player = {
       firstName: this.state.firstName.value,
       lastName: this.state.lastName.value,
-      score: this.state.score.value
+      score: parseInt(this.state.score.value, 10)
     }
 
     this.props.handleSave(this.state.playerId, player)
